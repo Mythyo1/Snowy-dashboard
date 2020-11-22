@@ -1,0 +1,198 @@
+// https://stackoverflow.com/questions/41440998/how-can-i-use-custom-theme-palettes-in-angular
+// to generate palettes
+
+@import "~@angular/material/theming";
+
+@include mat-core();
+
+:root {
+    --heading: #FFFFFF;
+    --font: #E3E7EA;
+    --plus: green;
+
+    --danger: darkred;
+    --muted: grey;
+    --interactive-muted: #4f545c;
+
+    --primary: #757A89;
+    --secondary: #78839B;
+    --tertiary: #838B84;
+
+    --background-primary: #171F2C;
+    --background-secondary: #111720;
+    --background-tertiary: #10151d;
+}
+body {    
+    background: black;
+    background: radial-gradient(circle, var(--background-primary) 0%, var(--background-secondary) 100%) !important;
+}
+:root[theme=DISCORD] body { 
+    background-color: var(--background-primary) !important;
+}
+
+:root[theme=DISCORD] {
+    --font: #99AAB5;
+
+    --danger: #B00000;
+    --muted: grey;
+    
+    --background-primary: #36393F;
+    --background-secondary: #2F3136;
+    --background-tertiary: #202225;
+}
+
+:root[theme=CHOCOLATE] {
+    --heading: #FFFFFF;
+    --font: #FFFFFF;
+
+    --primary: #482F5D;
+    --secondary: #45377C;
+    --tertiary: #351F20;
+
+    --background-primary: #372224;
+    --background-secondary: #2c1518;
+    --background-tertiary: #251113;
+
+    --gold: #D4AF37;
+    --silver: silver;
+    --bronze: #CD7F32;
+}
+
+:root[theme=IONIC] {
+    --heading: #FFFFFF;
+    --font: #F4F2F3;
+    --plus: green;
+
+    --danger: darkred;
+    --muted: grey;
+    --interactive-muted: #4f545c;
+
+    --primary: #46828D;
+    --secondary: #276C8A;
+    --tertiary: #36E2CA;
+
+    --background-primary: #15244B;
+    --background-secondary: #0a193a;
+    --background-tertiary: #081536;
+}
+
+$primary-palette: (
+    50 : #eeeff1,
+    100 : #d6d7dc,
+    200 : #babdc4,
+    300 : #9ea2ac,
+    400 : #8a8e9b,
+    500 : #757a89,
+    600 : #6d7281,
+    700 : #626776,
+    800 : #585d6c,
+    900 : #454a59,
+    A100 : #b9cafe,
+    A200 : #87a4fc,
+    A400 : #527dff,
+    A700 : #386aff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$secondary-palette: (
+    50 : #eff0f3,
+    100 : #d7dae1,
+    200 : #bcc1cd,
+    300 : #a1a8b9,
+    400 : #8c96aa,
+    500 : #78839b,
+    600 : #707b93,
+    700 : #657089,
+    800 : #5b667f,
+    900 : #48536d,
+    A100 : #ccdbff,
+    A200 : #99b7ff,
+    A400 : #6692ff,
+    A700 : #4d80ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #ffffff,
+    )
+);
+
+$primary: mat-palette($primary-palette);
+$secondary: mat-palette($secondary-palette);
+$warn: mat-palette($mat-red);
+
+$theme: mat-dark-theme($primary, $secondary, $warn);
+
+@include angular-material-theme($theme);
+
+// utils
+
+.color-heading {
+    color: var(--heading) !important;
+}
+
+.color-primary {
+    color: var(--primary) !important;
+}
+
+.interactive-muted {
+    color: var(--interactive-muted) !important;    
+}
+
+// global
+
+h1,h2,h3,h4,h5 {
+    color: var(--heading) !important;
+}
+
+// other
+
+.mat-success {
+    background-color: green;
+    color: #fff;
+}
+.mat-select-panel, .mat-chip.mat-standard-chip {
+    background-color: var(--background-secondary);
+}
+
+// TODO: move to overrides.css, and import
+// overrides
+
+.color-picker {
+    background: var(--background-tertiary) !important;
+    border: none !important;
+}
+
+.color-picker input {
+    background: var(--background-secondary) !important;
+    color: var(--font) !important;
+    border: none !important;
+}
+
+// colours:
+// 4A3050 (bg-primary), 4D426C, 4C429C (primary), 493A77, 372224

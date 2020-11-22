@@ -1,0 +1,30 @@
+<bot-sidebar>
+    <div *ngIf="form" class="container">
+        <h1 class="display-3">Settings</h1>
+        <hr>
+        <form #f="ngForm" [formGroup]="form">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <label class="mr-2">Private Leaderboard</label>
+                    <mat-checkbox formControlName="privateLeaderboard"></mat-checkbox>
+                </div>
+            </div>
+            <hr>
+            <h3>Dangerous</h3>
+            <p class="desc">Dangerous options that do dangerous things.</p>
+            <form #f="ngForm" [formGroup]="dangerousForm">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="p-2">Delete Config</div>
+                        <button (click)="delete()"
+                            class="ml-4 bg-danger" mat-button><i class="fas fa-trash"></i></button>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="p-2">Update Token</div>
+                        <button routerLink="/add-bot" class="ml-4 bg-warning" mat-button><i class="fas fa-sync"></i></button>
+                    </div>
+                </div>
+            </form>
+        </form>
+    </div>
+</bot-sidebar>
