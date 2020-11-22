@@ -1,9 +1,13 @@
 {
-  "name": "twopg-dashboard",
-  "version": "0.0.0",
+    "name": "ishaans-bot-maker",
+    "description": "Easily Build a Discord Bot With No Code",
+    "version": "1.0.0",
+    "engines": {
+    "node": "12.x"
+    },
   "scripts": {
     "ng": "ng",
-    "start": "npm run start:bot",
+    "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test --code-coverage",
     "test:api": "cd api && ts-mocha tests/*/*.spec.ts",
