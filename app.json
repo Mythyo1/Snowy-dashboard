@@ -10,15 +10,15 @@
   "env": {
     "CLIENT_ID": {
       "description": "Client ID from https://discord.com/developers.",
-      "value": "779513394499289089"
+      "value": ""
     },
     "CLIENT_SECRET": {
       "description": "Client Secret from https://discord.com/developers.",
-      "value": "KrtE2BCqxZYfGyCI4s_lyY4v3S-aSPar"
+      "value": "-aSPar"
     },
     "DASHBOARD_URL": {
       "description": "The Website URL [https://<heroku_app_name>/herokuapp.com]",
-      "value": "https://ishaans-bot-maker.herokuapp.com"
+      "value": ""
     },
     "ENCRYPTION_KEY": {
       "description": "Key for encrypting and decrypting bot tokens.",
@@ -26,7 +26,7 @@
     },
     "MONGO_URI": {
       "description": "The MongoDB URI to your database [i.e. from MongoDB Atlas].",
-      "value": "mongodb+srv://user2:85hBP4KubSypNXH8@cluster0.0hjyi.mongodb.net/ishaan-bot-maker?retryWrites=true&w=majority"
+      "value": ""
     }
   },
   "buildpacks": [{
